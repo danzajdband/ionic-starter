@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
+
+    <!-- directives -->
+    <script src="js/directives.js"></script>
+
+    <!-- Mango JavaScript SDK -->
+    <script src="https://js.getmango.com/v1/mango.js"></script>
+
+    <!-- your app's js -->
+    <script src="js/app.js"></script>
+  </head>
+  <body ng-app="starter" ng-controller="IndexController">
+
+    <ion-pane>
+      <ion-header-bar class="bar-stable">
+        <h1 class="title">Ionic Mango Starter</h1>
+      </ion-header-bar>
+      <ion-content>
+        <form mango:form="checkout">
+          <div class="list">
+            <label class="item item-input">
+              <input type="text" placeholder="Name on card" ng-model="holdername">
+            </label>
+            <label class="item item-input">
+              <input type="text" placeholder="Credit card number" ng-model="number">
+            </label>
+            <label class="item item-input item-select">
+              <div class="input-label">Card type</div>
+              <select ng-model="type">
+                <option value="visa">Visa</option>
+                <option value="amex">American Express</option>
+                <option value="mastercard">MasterCard</option>
+              </select>
+            </label>
+            <label class="item item-input">
+              <input type="text" placeholder="MM" ng-model="exp_month">
+            </label>
+            <label class="item item-input">
+              <input type="text" placeholder="YYYY" ng-model="exp_year">
+            </label>
+            <label class="item item-input">
+              <input type="text" placeholder="CCV" ng-model="ccv">
+            </label>
+            <button class="button button-block button-positive">Checkout</button>
+          </div>
+        </form>
+      </ion-content>
+    </ion-pane>
+  </body>
+</html>
