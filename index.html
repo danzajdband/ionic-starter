@@ -30,19 +30,24 @@
   <body ng-app="starter" ng-controller="IndexController">
 
     <ion-pane>
-      <ion-header-bar class="bar-stable">
-        <h1 class="title">Ionic Mango Starter</h1>
+      <ion-header-bar class="bar bar-header bar-stable">
+        <h1 class="title">Mango Checkout</h1>
       </ion-header-bar>
-      <ion-content>
+
+      <ion-content padding="true">
+
+        <div class="list card">
+          <div class="item item-avatar">
+            <img src="http://ecx.images-amazon.com/images/I/41mcHN%2BIDLL._AA90_.jpg" height="90" width="90">
+            <h2>Apple iPhone 6</h2>
+            <p><span class="positive">$845.99</span></p>
+          </div>
+        </div>
+
         <form mango:form="checkout">
-          <div class="list">
-            <label class="item item-input">
-              <input type="text" placeholder="Name on card" ng-model="holdername">
-            </label>
-            <label class="item item-input">
-              <input type="text" placeholder="Credit card number" ng-model="number">
-            </label>
-            <label class="item item-input item-select">
+
+          <div class="list card">
+            <label class="item item-input item-select item-stacked-label padding-top padding-bottom">
               <div class="input-label">Card type</div>
               <select ng-model="type">
                 <option value="visa">Visa</option>
@@ -50,19 +55,39 @@
                 <option value="mastercard">MasterCard</option>
               </select>
             </label>
-            <label class="item item-input">
-              <input type="text" placeholder="MM" ng-model="exp_month">
-            </label>
-            <label class="item item-input">
-              <input type="text" placeholder="YYYY" ng-model="exp_year">
-            </label>
-            <label class="item item-input">
-              <input type="text" placeholder="CCV" ng-model="ccv">
-            </label>
-            <button class="button button-block button-positive">Checkout</button>
           </div>
+
+          <div class="list card">
+
+            <label class="item item-input item-stacked-label">
+              <i class="icon ion-card padding-right"></i>
+              <span class="input-label">Card number</span>
+              <input type="number" maxlength="16" placeholder="4242424242424242" ng-model="number">
+            </label>
+
+            <label class="item item-input item-stacked-label">
+              <i class="icon ion-person padding-right"></i>
+              <span class="input-label">Name on card</span>
+              <input type="text" placeholder="Guillermo D Paz" ng-model="holdername">
+            </label>
+
+            <div class="row item">
+              <label class="item-input item-stacked-label col col-50">
+                <i class="icon ion-calendar padding-right"></i>
+                <span class="input-label">Expiry</span>
+                <input type="month" placeholder="MM / YYYY" ng-model="expiry">
+              </label>
+              <label class="item-input item-stacked-label col col-50">
+                <i class="icon ion-locked padding-right"></i>
+                <span class="input-label">ccv code</span>
+                <input type="number" placeholder="123" maxlength="4" ng-model="ccv">
+              </label>
+            </div>
+          </div>
+          <button class="button button-block button-balanced">Pay $845.99</button>
         </form>
       </ion-content>
+
     </ion-pane>
   </body>
 </html>
